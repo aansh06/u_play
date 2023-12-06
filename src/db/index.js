@@ -4,7 +4,7 @@
 import mongoose from "mongoose";
 import { DB_NAME } from "../constants.js";
 
-
+// connectDB function is an asynchronous function that attempts to establish a connection to a MongoDB database using Mongoose
 const connectDB = async () => {
     try {
         const connectionInstance = await mongoose.connect(`${process.env.MONGODB_URI}/${DB_NAME}`)

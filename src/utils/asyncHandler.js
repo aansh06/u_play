@@ -1,5 +1,8 @@
+// utility function asyncHandler for handling asynchronous Express.js route handlers
+
+// asyncHandler function takes another function requestHandler as an argument. This requestHandler function is assumed to be an asynchronous route handler ie a function that returns a Promise
 const asyncHandler = (requestHandler) => {
-  (req, res, next) => {
+  return (req, res, next) => {
     Promise.resolve(requestHandler(req, res, next)).catch((err) => next(err));
   };
 };
