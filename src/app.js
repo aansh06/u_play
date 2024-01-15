@@ -19,4 +19,16 @@ app.use(express.urlencoded({ extended: true, limit: "16kb" })); // config to  re
 app.use(express.static("public")); // middleware serves static files from the "public" directory,allows to serve things like stylesheets, images, and scripts directly without the need for a specific route.
 app.use(cookieParser()); // middleware parses cookies attached to the client's request and adds them to the request object as req.cookies
 
+
+
+// routes import
+import userRouter from './routes/user.routes.js'
+
+
+//routes declaration
+app.use("/api/v1/users", userRouter)
+
+
+
+
 export { app };
